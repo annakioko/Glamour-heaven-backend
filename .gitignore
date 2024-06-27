@@ -12,3 +12,64 @@ instance/
 htmlcov/
 
 *.egg-info/
+
+
+
+# Admin Routes
+
+# Users
+# GET /users: Get all users.
+# POST /users: Add a new user.
+# DELETE /users: Delete all employees.
+# GET /users/
+# : Get a user by ID.
+
+# Orders
+# GET /orders: View all orders in real-time.
+
+# Products
+# GET /products: Get a list of all products.
+# POST /products: Add a new product.
+# GET /products/
+# : Get a specific product by ID.
+# GET /products/category/
+# : Get all products under a certain category.
+# DELETE /products/
+# : Delete a product by ID.
+# PATCH /products/
+# : Edit a specific product.
+
+#Contact
+# GET /contact: Get contact information.
+# POST /contact: Send a reply back to user
+
+
+# Normal User Routes
+# Users
+# POST /users/sign-in: Create a new user by signing in.
+# GET /users/
+# : Get a user by ID to change their own details.
+# PATCH /users/
+# : Edit their own details.
+
+# Orders
+# POST /orders: Create a new order when making a payment.
+
+# Cart
+# GET /cart: View items in the cart.
+
+# Cart Items
+# PATCH /cart-items/
+# : Increase or decrease the amount of products.
+# DELETE /cart-items/
+# : Remove an item from the cart.
+# POST /cart-items: Create a new order item.
+
+# Products
+# GET /products/category/
+# : View all products by category.
+# GET /products/name/
+# : Get a product by name
+
+#Contact
+#POST/Contact: write a message to the admin

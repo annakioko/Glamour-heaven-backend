@@ -21,6 +21,7 @@ class User(db, SerializerMixin):
 
     carts = db.relationship('Carts', back_populates='user')
     orders = db.relationship("Order", back_populates="user")
+    contact = db.relationship("COntact", back_populates="user")
 
 
     @validates('email')
@@ -113,6 +114,19 @@ class Order(db, SerializerMixin):
 
     def __repr__(self):
         return f"<Order {self.id}, {self.address}, {self.payment_method}, {self.status}, {self.date}, {self.amount}>"
+    
+    class Contact(db.Model, SerializerMixin):
+        __tablename__ = 'contacts'
+
+    id = db.Column(db.Integer, primary_key=True)
+    message = db.Column(db.String)
+    email = db.Column(db.string)
+    user_id = db.column(db.string, db.ForeignKey('users.id'))
+
+    user = db.relationship("User", back_populates= 'contact', foreign_keys =[user_id])
+
+    def __repr__(self):
+        return f"<Contact {self.id}, {self.message}, {self.email}>"
     
 
 
